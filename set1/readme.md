@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+I've learnt how to download and install the needed libraries and files from github into VSCode, as well as push and pull back to github once completed tasks

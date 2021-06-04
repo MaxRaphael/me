@@ -1,9 +1,9 @@
-name: Your Name
-studentNumber: z1234567
-officialEmail: noIdea@unsw.edu.au
+name: Max Melamed
+studentNumber: z5251550
+officialEmail: z5251550@ad.unsw.edu.au
 contactEmail: # don't write on this line
-  firstBit: firstName.Lastname # this avoids spam, the @ is implied
-  otherBit: whereIwork.com
+  firstBit: maxmelamed4 # this avoids spam, the @ is implied
+  otherBit: gmail.com
 # accounts
-stackOverflowLink: https://stackoverflow.com/users/1835727/ben
-github: notionparallax
+stackOverflowLink: https://stackoverflow.com/users/16123221/max-melamed
+github: MaxRaphael
