@@ -13,16 +13,20 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 
 some_words = ['what', 'does', 'this', 'line', 'do', '?']
 
+#I dont know. I think I now know, it will print a single word in the lsit and then print the next word 
 for word in some_words:
-    print(word)
+    print(word) #It printed every word on different lines
 
+# It will do the same as above
 for x in some_words:
-    print(x)
+    print(x) #It did the same as above
 
-print(some_words)
+#It will print the entire list
+print(some_words) #It pritned the entire list
 
-if len(some_words) > 3:
-    print('some_words contains more than 3 words')
+#I think that this prints a line only if some_words has more than 3 words
+if len(some_words) > 5:
+    print('some_words contains more than 3 words') #it printed the string because some_words has more than 3 words
 
 def usefulFunction():
     """

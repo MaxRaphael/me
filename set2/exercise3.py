@@ -7,7 +7,14 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
+    if a_number % 2 == 0 :
+        return False
+
+    else :
+        return True
+    
+
+    
 
 
 def fix_it(moves=True, should_move=True):
@@ -25,7 +32,14 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+    if moves == True and should_move == True or moves == False and should_move == False :   
+        return 'No Problem'
+
+    elif moves == True and should_move == False:
+        return 'Duct Tape'
+
+    else :
+        return 'WD-40'
 
 
 def loops_1a():
@@ -35,8 +49,11 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
-
+    star_list = []
+    for x in range(10):
+       star_list.append("*")
+    return star_list
+    
 
 def loops_1c(number_of_items=5, symbol="#"):
     """Respond to variables.
@@ -45,7 +62,13 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    symbol_list = []
+    for x in range(number_of_items):
+        symbol_list.append(symbol)
+    return symbol_list
+    
+    
+    
 
 
 def loops_2():
@@ -66,7 +89,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    starfield = []
+    for y in range (10):
+        star_list = []
+        for x in range(10):
+            star_list.append("*")
+        starfield.append(star_list)
+    return starfield
+    
 
 
 def loops_3():
@@ -90,7 +120,15 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+
+    number_block = []
+    for y in range (10):
+        numbers = []
+        for x in range(10):
+            numbers.append(0)
+        number_block.append(numbers + 1)
+    return str(number_block)
+    
 
 
 def loops_4():
