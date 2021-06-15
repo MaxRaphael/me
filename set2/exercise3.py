@@ -216,7 +216,6 @@ def loops_6():
     """
     r_ange = 12
 
-    im typing o i acan push
     
   
 
