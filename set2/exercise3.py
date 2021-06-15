@@ -122,13 +122,13 @@ def loops_3():
     """
 
     number_block = []
-    for y in range (10):
+    for i in range (10):
         numbers = []
-        for x in range(10):
-            numbers.append(0)
-        number_block.append(numbers + 1)
-    return str(number_block)
-    
+        for j in range(10):
+            numbers.append(str(i))
+        number_block.append(numbers)
+      
+    return (number_block)
 
 
 def loops_4():
@@ -148,7 +148,15 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+
+    number_square = []
+    for i in range(10):
+        number_row = []
+        for j in range (10):
+            number_row.append(str(j))
+        number_square.append(number_row)
+
+    return(number_square)
 
 
 def loops_5():
@@ -175,7 +183,15 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+
+    horizontal = []
+    for i in range (10):
+        vertical = []
+        for j in range(5):
+            vertical.append("(i{0}, j{1})".format(i, j))
+        horizontal.append(vertical)
+      
+    return (horizontal)
 
 
 def loops_6():
@@ -198,8 +214,9 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
-
+    r_ange = 1
+    
+  
 
 def loops_7():
     """Make a pyramid.
