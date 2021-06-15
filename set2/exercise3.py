@@ -2,6 +2,9 @@
 """Modify each function until the tests pass."""
 
 
+from typing import Sized
+
+
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
@@ -214,7 +217,17 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    r_ange = 12
+
+    wedge = []
+
+    for i in range(10):
+        size = []
+        for j in range(i + 1):
+           size.append(j)
+        wedge.append(size)
+    
+    return wedge
+    
 
     
   
@@ -240,7 +253,29 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    
+     
+    
+    
+    pyramid = []
+    for rowNumber in range (5):
+        row = []
+        for i in range (4 - rowNumber):
+            row.append(" ")
+
+        for j in range (1 + (2 * rowNumber)) :
+            row.append("*")
+       
+        for j in range (4 - rowNumber):
+            row.append(" ")
+       
+        
+        pyramid.append(row)
+
+
+
+    
+    return pyramid
 
 
 def little_printer(some_kind_of_list, exercise_name):
