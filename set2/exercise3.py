@@ -214,7 +214,9 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    r_ange = 1
+    r_ange = 12
+
+    im typing o i acan push
     
   
 
