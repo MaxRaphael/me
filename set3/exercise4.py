@@ -24,12 +24,26 @@ def binary_search(low, high, actual_number):
     Use the VS Code debugging tools a lot here. It'll make understanding 
     things much easier.
     """
+
     tries = 0
     guess = 0
-
     # Write your code in here
-
-    return {"guess": guess, "tries": tries}
+    print("Number Finder algorithm activated")
+    while guess != actual_number:
+        for i in range(high):
+            if i == actual_number:
+                print('Correct! {0} was the number'.format(i))
+                guess = i
+                tries = (tries + 1)
+                break
+            elif i < low:
+                print('{0} is outside the bounds'.format(i))
+                tries = (tries + 1)
+            else:
+                print('{0} is the wrong number!'.format(i))
+    
+    myDic = {"guess": guess, "tries": tries}
+    return myDic
 
 
 if __name__ == "__main__":

@@ -12,7 +12,13 @@ def loop_ranger(start, stop=None, step=1):
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+
+    step_loop = []
+    for i in range(start, stop, step):
+        step_loop.append(i)
+
+
+    return step_loop
 
 
 def lone_ranger(start, stop, step):
@@ -20,27 +26,47 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    wrap_loop = []
+    for i in range(start, stop, step):
+        result = i / 1
+        wrap_loop.append(result)
+
+    return wrap_loop
 
 
-def two_step_ranger(start, stop):
+def two_step_ranger(start, stop, step=2):
     """Make a range that steps by 2.
 
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+   
 
+    twoStepper = []
+    for i in range(start,stop, step):
+        twoStepper.append(i)
 
+    return twoStepper
+
+34
 def stubborn_asker(low, high):
     """Ask for a number between low and high until actually given one.
 
     Ask for a number, and if the response is outside the bounds keep asking
     until you get a number that you think is OK
-
+    python ../course/set3/tests.py
     Look up the docs for input
     """
-    return None
+
+    while True:
+        number = int(input('Please enter a number between {0} and {1}: '.format(low, high)))
+        if (number > low) and (number < high):
+            return number
+        else:
+            print('{0} is not in the bounds, try again!'.format(number))
+
+        
+    
 
 
 def not_number_rejector(message):
@@ -49,19 +75,40 @@ def not_number_rejector(message):
     Ask for a number, and if the response is actually NOT a number 
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
-    """
-    return None
+    """ 
+   
+    while True:
+        try:
+            x = (input('{0}: '.format(message))) 
+            x = int(x)
+            return x
+        except (ValueError, TypeError):
+            print('Please enter an integer.')
+    
+   
+
 
 
 def super_asker(low, high):
     """Robust asking function.
 
     Combine what you learnt from stubborn_asker and not_number_rejector
-    to make a function that does it all!
+re    to make a function that does it all!
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    while True:
+        print("Please enter a number between {0} and {1}".format(low, high))
+        try:
+            x = input()
+            x = int(x)
+            if (x > low and x < high):
+                return x
+            else :
+                print('{0} is not in the bounds, try again!'.format(x))
+        except (ValueError, TypeError) :
+            print('{0} is not an integer, please enter an integer'.format(x))
+
 
 
 if __name__ == "__main__":
