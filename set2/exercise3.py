@@ -223,7 +223,7 @@ def loops_6():
     for i in range(10):
         size = []
         for j in range(i + 1):
-           size.append(j)
+           size.append('{0}'.format(j))
         wedge.append(size)
     
     return wedge
