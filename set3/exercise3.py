@@ -37,8 +37,6 @@ def advancedGuessingGame():
         upperBound = int(upperBound)
 
         print("OK then, guess a number between {0} and {1}?".format(lowerBound, upperBound))
-        #lowerBound = int(lowerBound)
-        #upperBound = int(upperBound)
         bounds = True
       except (ValueError, TypeError) :
         print("Please enter an integer:")
