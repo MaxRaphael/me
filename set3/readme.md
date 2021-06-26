@@ -4,3 +4,7 @@ I struggled a lot with exercise 1 however I found exercise 3 and 4 a bit more in
 
 I found exercise 3 and 4 quite opposite to my hellish experience in exercise 1. I enjoyed the debugging involved in these exercises as I learnt through every mistake. Exercise 4 was especially challenging as the previous exercises this week were input based and 4 went back to loop based and automation/algorithmic. 
 
+        ********************************NEXT DAY UPDATE******************************************
+
+I was horribly wrong with exercise 4, I did a sequential search not a binary search and for some reason the tester was marking it as correct. I spend a while researching binary searches as well as the Kahn academy course and now understand how to make a simple algorithm using a sequential system. I struggle to wrap my head around the math and logic but once I got it working it began to make more sense to me.
+

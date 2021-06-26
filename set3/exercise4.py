@@ -8,43 +8,36 @@ import math
 
 
 def binary_search(low, high, actual_number):
-    """Do a binary search.
-
-    This is going to be your first 'algorithm' in the usual sense of the word!
-    you'll give it a range to guess inside, and then use binary search to home
-    in on the actual_number.
     
-    Each guess, print what the guess is. Then when you find the number return
-    the number of guesses it took to get there and the actual number
-    as a dictionary. make sure that it has exactly these keys:
-    {"guess": guess, "tries": tries}
-    
-    This will be quite hard, especially hard if you don't have a good diagram!
-    
-    Use the VS Code debugging tools a lot here. It'll make understanding 
-    things much easier.
-    """
-
     tries = 0
     guess = 0
-    # Write your code in here
-    print("Number Finder algorithm activated")
-    while guess != actual_number:
-        for i in range(high):
-            if i == actual_number:
-                print('Correct! {0} was the number'.format(i))
-                guess = i
-                tries = (tries + 1)
-                break
-            elif i < low:
-                print('{0} is outside the bounds'.format(i))
-                tries = (tries + 1)
-            else:
-                print('{0} is the wrong number!'.format(i))
-    
-    myDic = {"guess": guess, "tries": tries}
-    return myDic
 
+    guessDic = {"guess": guess, "tries": tries}
+    print("Number Finder algorithm activated...")
+    print("range is between {0} and {1}".format((low), (high)))
+    print("Actual number: {0}".format(actual_number))
+    while guess != actual_number:
+        print("range is now  {0} and {1}".format((low), (high)))
+        mid = (low + high) / 2
+        mid = int(mid)
+        if mid == actual_number:
+            guess = mid
+            tries = tries + 1
+            print(guess)
+        elif mid > actual_number:
+            high = mid 
+            tries = tries + 1
+            mid = mid - 1
+            print(mid)
+        else:
+            low = mid 
+            tries = tries + 1
+            mid = mid + 1
+            print(mid)
+        guess = mid
+        guessDic = {"guess": guess, "tries": tries, "actual number": actual_number}    
+
+    return guessDic
 
 if __name__ == "__main__":
     print(binary_search(1, 100, 5))
