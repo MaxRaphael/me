@@ -7,6 +7,8 @@ import requests
 import inspect
 import sys
 
+from requests.api import post
+
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
 CWD = os.getcwd()  # The curent working directory
@@ -33,10 +35,27 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
+
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+
+    last = data['results'][0]['name']['last']
+   
+
+    password = data['results'][0]['login']['password']  
+    
+
+    postcodeString = data['results'][0]['location']['postcode']
+    postcodeInt = int(postcodeString)
+    
+
+    idStr = data['results'][0]['id']['value']
+    idInt = int(idStr)
+
+    postcodePlusID = postcodeInt + idInt
+
+    return {"lastName": last , "password": password, "postcodePlusID": postcodePlusID}
 
 
 def wordy_pyramid():
@@ -52,16 +71,16 @@ def wordy_pyramid():
     Return the pyramid as a list of strings.
     I.e. ["cep", "dwine", "tenoner", ...]
     [
-    "cep",
-    "dwine",
-    "tenoner",
-    "ectomeric",
-    "archmonarch",
-    "phlebenterism",
-    "autonephrotoxin",
-    "redifferentiation",
-    "phytosociologically",
-    "theologicohistorical",
+    "cep ",
+    "dwine ",
+    "tenoner ",
+    "ectomeric ",
+    "archmonarch ",
+    "phlebenterism ",
+    "autonephrotoxin ",
+    "redifferentiation ",
+    "phytosociologically ",
+    "theologicohistorical ",
     "supersesquitertial",
     "phosphomolybdate",
     "spermatophoral",
@@ -73,6 +92,34 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
+
+
+    list = []
+    
+    i = 3
+    while i != 21 :
+        longStr = str(i)
+        for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(longStr)]:
+            response = requests.get(url)
+            list.append(response.text)
+            i = i + 2
+    
+    twnty = str(20)
+    for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(twnty)]:
+         response = requests.get(url)
+         list.append(response.text)
+        
+
+    j = 18
+    while j != 2 :
+        shortStr = str(j)
+        for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(shortStr)]:
+            response = requests.get(url)
+            list.append(response.text)
+            j = j - 2
+            
+    return list
+    
     pass
 
 
@@ -94,9 +141,9 @@ def pokedex(low=1, high=5):
 
     url = template.format(id=5)
     r = requests.get(url)
-    if r.status_code is 200:
+    if r.status_code == 200:
         the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    #return {"name": None, "weight": None, "height": None}
 
 
 def diarist():
