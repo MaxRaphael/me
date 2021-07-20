@@ -94,56 +94,62 @@ def wordy_pyramid():
     """
 
 
-    list = []
+    # list = []
     
-    i = 3
-    while i != 21 :
-        longStr = str(i)
-        for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(longStr)]:
-            response = requests.get(url)
-            list.append(response.text)
-            i = i + 2
+    # i = 3
+    # while i != 21 :
+    #     longStr = str(i)
+    #     for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(longStr)]:
+    #         response = requests.get(url)
+    #         list.append(response.text)
+    #         i = i + 2
     
-    twnty = str(20)
-    for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(twnty)]:
-         response = requests.get(url)
-         list.append(response.text)
+    # twnty = str(20)
+    # for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(twnty)]:
+    #      response = requests.get(url)
+    #      list.append(response.text)
         
 
-    j = 18
-    while j != 2 :
-        shortStr = str(j)
-        for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(shortStr)]:
-            response = requests.get(url)
-            list.append(response.text)
-            j = j - 2
+    # j = 18
+    # while j != 2 :
+    #     shortStr = str(j)
+    #     for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(shortStr)]:
+    #         response = requests.get(url)
+    #         list.append(response.text)
+    #         j = j - 2
             
-    return list
+    # return list
     
-    pass
+    # pass
 
 
 def pokedex(low=1, high=5):
-    """ Return the name, height and weight of the tallest pokemon in the range low to high.
-
-    Low and high are the range of pokemon ids to search between.
-    Using the Pokemon API: https://pokeapi.co get some JSON using the request library
-    (a working example is filled in below).
-    Parse the json and extract the values needed.
-    
-    TIP: reading json can someimes be a bit confusing. Use a tool like
-         http://www.jsoneditoronline.org/ to help you see what's going on.
-    TIP: these long json accessors base["thing"]["otherThing"] and so on, can
-         get very long. If you are accessing a thing often, assign it to a
-         variable and then future access will be easier.
-    """
+   
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code == 200:
-        the_json = json.loads(r.text)
-    #return {"name": None, "weight": None, "height": None}
+    
+    pokemonHeight = []
+    pokkemon = []
+    for i in range(low, high + 1):
+        url = template.format(id=i)
+        r = requests.get(url)
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+            height = the_json['height']
+        pokemonHeight.append(height)
+        the_json['index'] = i
+        pokkemon.append(the_json)
+    
+    max_value = max(pokemonHeight)
+    max_index = pokemonHeight.index(max_value)
+    the_json = pokkemon[max_index]
+    height = the_json['height']
+    weight = the_json['weight']
+    name = the_json['forms'][0]['name']
+
+
+ 
+    return {"name": name, "weight": weight, "height": height}
 
 
 def diarist():
@@ -160,7 +166,28 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    
+    f = open('Trispokedovetiles(laser).gcode', 'r')
+
+    laserOn = 0
+    content = f.readlines()
+    for line in content:
+        if 'M10 P1' in line:
+            print("The laser has fired")
+            laserOn += 1
+    
+    laserOn = str(laserOn)
+    print(laserOn)
+    json_obj = [laserOn]
+
+    with open("lasers.pew", "w") as jsonFile:
+        json.dump(laserOn, jsonFile)
+    
     pass
+
+
+
+
 
 
 if __name__ == "__main__":
