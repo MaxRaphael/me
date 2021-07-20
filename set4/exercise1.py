@@ -94,33 +94,33 @@ def wordy_pyramid():
     """
 
 
-    # list = []
+    list = []
     
-    # i = 3
-    # while i != 21 :
-    #     longStr = str(i)
-    #     for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(longStr)]:
-    #         response = requests.get(url)
-    #         list.append(response.text)
-    #         i = i + 2
+    i = 3
+    while i != 21 :
+        longStr = str(i)
+        for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(longStr)]:
+            response = requests.get(url)
+            list.append(response.text)
+            i = i + 2
     
-    # twnty = str(20)
-    # for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(twnty)]:
-    #      response = requests.get(url)
-    #      list.append(response.text)
+    twnty = str(20)
+    for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(twnty)]:
+         response = requests.get(url)
+         list.append(response.text)
         
 
-    # j = 18
-    # while j != 2 :
-    #     shortStr = str(j)
-    #     for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(shortStr)]:
-    #         response = requests.get(url)
-    #         list.append(response.text)
-    #         j = j - 2
+    j = 18
+    while j != 2 :
+        shortStr = str(j)
+        for url in ["https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={0}".format(shortStr)]:
+            response = requests.get(url)
+            list.append(response.text)
+            j = j - 2
             
-    # return list
+    return list
     
-    # pass
+    pass
 
 
 def pokedex(low=1, high=5):
@@ -173,16 +173,14 @@ def diarist():
     content = f.readlines()
     for line in content:
         if 'M10 P1' in line:
-            print("The laser has fired")
             laserOn += 1
     
     laserOn = str(laserOn)
-    print(laserOn)
-    json_obj = [laserOn]
 
-    with open("lasers.pew", "w") as jsonFile:
-        json.dump(laserOn, jsonFile)
-    
+    f = open("lasers.pew", "w")
+    f.write(laserOn)
+    f.close()
+        
     pass
 
 
