@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week I was preparing for the exam by going through prior weeks exercises. I found the exam relatively well balanced, although I believe the last question was never going to be completed with my level of understanding, at least with how quickly I can write out working code. Overall I am quite happy with the outcome of the exam

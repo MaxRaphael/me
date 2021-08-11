@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+Post exam I am now focusing on the data set. Pandas is very difficult to work around without knowing the correct things to google but regardless what I am finding is extremely interesting

@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+After deciding on what my chosen data set was, cleaning up the data set in pandas has proven to be quite difficult as there is a lot of trim, change and re-shape.

@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week I am finishing set 4 exercise before the final exam. Set 4 has proven to be the most difficult so far, however its a doable and welcome challenge.

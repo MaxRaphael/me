@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+This week I have been solely focusing on the data set. I am incorporating a second data set for us in which I will compare the two sets together and discuss how they relate to eachother in the final presentation next week.
